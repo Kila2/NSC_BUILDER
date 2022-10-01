@@ -89,10 +89,14 @@ def get_info(file):
 
 
 def verify(target):
-    stdout = subprocess2.capture(
-        f"set PYTHONIOENCODING=utf8 && python \"{squirrel}\" -o \"{output_info_dir}\" -v \"{target}\"").decode('utf-8')
-    if str(stdout).rstrip().endswith("FILE IS CORRECT"):
-        print(f"check ok {target}")
-    else:
-        print(f"check failed {target}")
-        print(stdout)
+    verfiy_result_path = f"{target}.verify"
+    if not os.path.exists(verfiy_result_path):
+        stdout = subprocess2.capture(
+            f"set PYTHONIOENCODING=utf8 && python \"{squirrel}\" -o \"{output_info_dir}\" -v \"{target}\"").decode('utf-8')
+        if str(stdout).find("CORRUPT") != -1:
+            print(f"check ok {target}")
+            with open(verfiy_result_path, encoding='utf-8',mode="w+") as filehandler:
+                filehandler.write(stdout)
+        else:
+            print(f"check failed {target}")
+            print(stdout)

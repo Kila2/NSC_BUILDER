@@ -22,8 +22,8 @@ import DBmodule as dbmodule
 from datetime import date
 
 # SET ENVIRONMENT
-squirrel_dir=os.path.abspath(os.curdir)
-NSCB_dir=os.path.abspath('../'+(os.curdir))
+squirrel_dir=os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+NSCB_dir=os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
 if os.path.exists(os.path.join(squirrel_dir,'ztools')):
 	NSCB_dir=squirrel_dir
@@ -963,8 +963,9 @@ try:
 	check_current()
 except:pass	
 	
-def get_contentname(titleid,roman=True,format='tabs'):
+def get_contentname(titleid,nutdbfile=nutdbfile,roman=True,format='tabs'):
 	cname=False
+	publisher=False
 	with open(nutdbfile) as json_file:	
 		data = json.load(json_file)		
 		titleid=str(titleid).lower()
@@ -976,6 +977,8 @@ def get_contentname(titleid,roman=True,format='tabs'):
 						check=True	
 				if str(j) == 'name' and check==True:
 					cname=str(k)
+				if str(j) == 'publisher' and check==True:
+					publisher=str(k)
 					break
 		if cname != False and roman == True:
 			converter = kakashi_conv()
@@ -986,8 +989,8 @@ def get_contentname(titleid,roman=True,format='tabs'):
 			cname=set_roma_uppercases(cname)
 		else:pass						
 		if cname==False:
-			return False
-	return 	cname		
+			return (False,False)
+	return 	(cname,publisher)
 
 def get_metascores(titleid):
 	titleid=str(titleid).lower()	
@@ -1170,7 +1173,7 @@ def get_dlcname(titleid,roman=True,format='tabs'):
 	return 	name			
 				
 
-def get_dlcData(titleid,roman=True,format='tabs'):
+def get_dlcData(titleid,nutdbfile=nutdbfile,roman=True,format='tabs'):
 	cname=False;basename=False;name=False;editor=False		
 	with open(nutdbfile) as json_file:			
 		data = json.load(json_file)		

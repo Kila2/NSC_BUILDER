@@ -44,6 +44,14 @@ sq_settings.set_prod_environment()
 import Keys
 import Config
 import Status	
+import inspect
+
+class LineNo:
+	def __str__(self):
+		return str(inspect.currentframe().f_back.f_lineno)
+
+
+__line__ = LineNo()
 
 # SET ENVIRONMENT
 squirrel_dir=os.path.abspath(os.curdir)
@@ -4807,7 +4815,7 @@ if __name__ == '__main__':
 						print('********************************************************')
 						i=0
 						while i==0:
-							print('Input "1" to print to text file')
+							print(f"Input \"1\" to print to text file {__line__}")
 							print('Input "2" to NOT print to text file\n')
 							ck=input('Input your answer: ')
 							if ck ==str(1):
@@ -4833,7 +4841,7 @@ if __name__ == '__main__':
 						print('********************************************************')
 						i=0
 						while i==0:
-							print('Input "1" to print to text file')
+							print(f"Input \"1\" to print to text file {__line__}")
 							print('Input "2" to NOT print to text file\n')
 							ck=input('Input your answer: ')
 							if ck ==str(1):
@@ -4892,7 +4900,7 @@ if __name__ == '__main__':
 						print('********************************************************')
 						i=0
 						while i==0:
-							print('Input "1" to print to text file')
+							print(f"Input \"1\" to print to text file {__line__}")
 							print('Input "2" to NOT print to text file\n')
 							ck=input('Input your answer: ')
 							if ck ==str(1):
@@ -4918,7 +4926,7 @@ if __name__ == '__main__':
 						print('********************************************************')
 						i=0
 						while i==0:
-							print('Input "1" to print to text file')
+							print(f"Input \"1\" to print to text file {__line__}")
 							print('Input "2" to NOT print to text file\n')
 							ck=input('Input your answer: ')
 							if ck ==str(1):
@@ -4985,23 +4993,23 @@ if __name__ == '__main__':
 					feed=f.print_fw_req(trans,roma=roman)
 					f.flush()
 					f.close()
-					if not args.text_file:
-						print('\n********************************************************')
-						print('Do you want to print the information to a text file')
-						print('********************************************************')
-						i=0
-						while i==0:
-							print('Input "1" to print to text file')
-							print('Input "2" to NOT print to text file\n')
-							ck=input('Input your answer: ')
-							if ck ==str(1):
-								with open(infotext, 'w') as info:
-									info.write(feed)
-								i=1
-							elif ck ==str(2):
-								i=1
-							else:
-								print('WRONG CHOICE\n')
+					# if not args.text_file:
+					# 	print('\n********************************************************')
+					# 	print('Do you want to print the information to a text file')
+					# 	print('********************************************************')
+					# 	i=0
+					# 	while i==0:
+					# 		print(f"Input \"1\" to print to text file {__line__}")
+					# 		print('Input "2" to NOT print to text file\n')
+					# 		ck=input('Input your answer: ')
+					# 		if ck ==str(1):
+					# 			with open(infotext, 'w') as info:
+					# 				info.write(feed)
+					# 			i=1
+					# 		elif ck ==str(2):
+					# 			i=1
+					# 		else:
+					# 			print('WRONG CHOICE\n')
 				except BaseException as e:
 					Print.error('Exception: ' + str(e))
 			if filename.endswith('.xci') or filename.endswith('.xcz'):
@@ -5011,23 +5019,23 @@ if __name__ == '__main__':
 					feed=f.print_fw_req(trans,roma=roman)
 					f.flush()
 					f.close()
-					if not args.text_file:
-						print('\n********************************************************')
-						print('Do you want to print the information to a text file')
-						print('********************************************************')
-						i=0
-						while i==0:
-							print('Input "1" to print to text file')
-							print('Input "2" to NOT print to text file\n')
-							ck=input('Input your answer: ')
-							if ck ==str(1):
-								with open(infotext, 'w') as info:
-									info.write(feed)
-								i=1
-							elif ck ==str(2):
-								i=1
-							else:
-								print('WRONG CHOICE\n')
+					# if not args.text_file:
+					# 	print('\n********************************************************')
+					# 	print('Do you want to print the information to a text file')
+					# 	print('********************************************************')
+					# 	i=0
+					# 	while i==0:
+					# 		print(f"Input \"1\" to print to text file {__line__}")
+					# 		print('Input "2" to NOT print to text file\n')
+					# 		ck=input('Input your answer: ')
+					# 		if ck ==str(1):
+					# 			with open(infotext, 'w') as info:
+					# 				info.write(feed)
+					# 			i=1
+					# 		elif ck ==str(2):
+					# 			i=1
+					# 		else:
+					# 			print('WRONG CHOICE\n')
 				except BaseException as e:
 					Print.error('Exception: ' + str(e))
 			Status.close()
@@ -5242,7 +5250,7 @@ if __name__ == '__main__':
 						print('********************************************************')
 						i=0
 						while i==0:
-							print('Input "1" to print to text file')
+							print(f"Input \"1\" to print to text file {__line__}")
 							print('Input "2" to NOT print to text file\n')
 							ck=input('Input your answer: ')
 							if ck ==str(1):
@@ -5268,7 +5276,7 @@ if __name__ == '__main__':
 						print('********************************************************')
 						i=0
 						while i==0:
-							print('Input "1" to print to text file')
+							print(f"Input \"1\" to print to text file {__line__}")
 							print('Input "2" to NOT print to text file\n')
 							ck=input('Input your answer: ')
 							if ck ==str(1):
@@ -5299,7 +5307,7 @@ if __name__ == '__main__':
 						print('********************************************************')
 						i=0
 						while i==0:
-							print('Input "1" to print to text file')
+							print(f"Input \"1\" to print to text file {__line__}")
 							print('Input "2" to NOT print to text file\n')
 							ck=input('Input your answer: ')
 							if ck ==str(1):
@@ -5667,7 +5675,7 @@ if __name__ == '__main__':
 						print('********************************************************')
 						i=0
 						while i==0:
-							print('Input "1" to print to text file')
+							print(f"Input \"1\" to print to text file {__line__}")
 							print('Input "2" to NOT print to text file\n')
 							ck=input('Input your answer: ')
 							if ck ==str(1):
@@ -5693,7 +5701,7 @@ if __name__ == '__main__':
 						print('********************************************************')
 						i=0
 						while i==0:
-							print('Input "1" to print to text file')
+							print(f"Input \"1\" to print to text file {__line__}")
 							print('Input "2" to NOT print to text file\n')
 							ck=input('Input your answer: ')
 							if ck ==str(1):
@@ -5747,23 +5755,23 @@ if __name__ == '__main__':
 					feed=f.read_cnmt()
 					f.flush()
 					f.close()
-					if not args.text_file:
-						print('\n********************************************************')
-						print('Do you want to print the information to a text file')
-						print('********************************************************')
-						i=0
-						while i==0:
-							print('Input "1" to print to text file')
-							print('Input "2" to NOT print to text file\n')
-							ck=input('Input your answer: ')
-							if ck ==str(1):
-								with open(infotext, 'w') as info:
-									info.write(feed)
-								i=1
-							elif ck ==str(2):
-								i=1
-							else:
-								print('WRONG CHOICE\n')
+					# if not args.text_file:
+					# 	print('\n********************************************************')
+					# 	print('Do you want to print the information to a text file')
+					# 	print('********************************************************')
+					# 	i=0
+					# 	while i==0:
+					# 		print(f"Input \"1\" to print to text file {__line__}")
+					# 		print('Input "2" to NOT print to text file\n')
+					# 		ck=input('Input your answer: ')
+					# 		if ck ==str(1):
+					# 			with open(infotext, 'w') as info:
+					# 				info.write(feed)
+					# 			i=1
+					# 		elif ck ==str(2):
+					# 			i=1
+					# 		else:
+					# 			print('WRONG CHOICE\n')
 				except BaseException as e:
 					Print.error('Exception: ' + str(e))
 			if filename.endswith('.xci') or filename.endswith('.xcz'):
@@ -5779,7 +5787,7 @@ if __name__ == '__main__':
 						print('********************************************************')
 						i=0
 						while i==0:
-							print('Input "1" to print to text file')
+							print(f"Input \"1\" to print to text file {__line__}")
 							print('Input "2" to NOT print to text file\n')
 							ck=input('Input your answer: ')
 							if ck ==str(1):
@@ -5810,7 +5818,7 @@ if __name__ == '__main__':
 						print('********************************************************')
 						i=0
 						while i==0:
-							print('Input "1" to print to text file')
+							print(f"Input \"1\" to print to text file {__line__}")
 							print('Input "2" to NOT print to text file\n')
 							ck=input('Input your answer: ')
 							if ck ==str(1):
@@ -7616,7 +7624,7 @@ if __name__ == '__main__':
 						while i==0:
 							print('Input "1" to VERIFY hash of files')
 							print('Input "2" to NOT verify hash  of files\n')
-							ck=input('Input your answer: ')
+							ck="1"
 							if ck ==str(1):
 								print('')
 								f = Fs.Nsp(filename, 'rb')
@@ -7630,22 +7638,22 @@ if __name__ == '__main__':
 								i=1
 							else:
 								print('WRONG CHOICE\n')
-						print('\n********************************************************')
-						print('Do you want to print the information to a text file')
-						print('********************************************************')
-						i=0
-						while i==0:
-							print('Input "1" to print to text file')
-							print('Input "2" to NOT print to text file\n')
-							ck=input('Input your answer: ')
-							if ck ==str(1):
-								with open(infotext, 'w') as info:
-									info.write(feed)
-								i=1
-							elif ck ==str(2):
-								i=1
-							else:
-								print('WRONG CHOICE\n')
+						# print('\n********************************************************')
+						# print('Do you want to print the information to a text file')
+						# print('********************************************************')
+						# i=0
+						# while i==0:
+						# 	print(f"Input \"1\" to print to text file {__line__}")
+						# 	print('Input "2" to NOT print to text file\n')
+						# 	ck=input('Input your answer: ')
+						# 	if ck ==str(1):
+						# 		with open(infotext, 'w') as info:
+						# 			info.write(feed)
+						# 		i=1
+						# 	elif ck ==str(2):
+						# 		i=1
+						# 	else:
+						# 		print('WRONG CHOICE\n')
 					elif args.text_file:
 						if vertype == "lv2":
 							f = Fs.Nsp(filename, 'rb')
@@ -7715,7 +7723,7 @@ if __name__ == '__main__':
 						while i==0:
 							print('Input "1" to VERIFY hash of files')
 							print('Input "2" to NOT verify hash  of files\n')
-							check=input('Input your answer: ')
+							check="1"
 							if check ==str(1):
 								print('')
 								f = Fs.factory(filename)
@@ -7730,22 +7738,22 @@ if __name__ == '__main__':
 								i=1
 							else:
 								print('WRONG CHOICE\n')
-						print('\n********************************************************')
-						print('Do you want to print the information to a text file')
-						print('********************************************************')
-						i=0
-						while i==0:
-							print('Input "1" to print to text file')
-							print('Input "2" to NOT print to text file\n')
-							check=input('Input your answer: ')
-							if check ==str(1):
-								with open(infotext, 'w') as info:
-									info.write(feed)
-								i=1
-							elif check ==str(2):
-								i=1
-							else:
-								print('WRONG CHOICE\n')
+						# print('\n********************************************************')
+						# print('Do you want to print the information to a text file')
+						# print('********************************************************')
+						# i=0
+						# while i==0:
+						# 	print(f"Input \"1\" to print to text file {__line__}")
+						# 	print('Input "2" to NOT print to text file\n')
+						# 	check=input('Input your answer: ')
+						# 	if check ==str(1):
+						# 		with open(infotext, 'w') as info:
+						# 			info.write(feed)
+						# 		i=1
+						# 	elif check ==str(2):
+						# 		i=1
+						# 	else:
+						# 		print('WRONG CHOICE\n')
 					elif args.text_file:
 						if vertype == "lv2":
 							f = Fs.factory(filename)
@@ -7816,7 +7824,7 @@ if __name__ == '__main__':
 						while i==0:
 							print('Input "1" to VERIFY hash of files')
 							print('Input "2" to NOT verify hash  of files\n')
-							ck=input('Input your answer: ')
+							ck="1"
 							if ck ==str(1):
 								print('')
 								f = Fs.Nsp(filename, 'rb')
@@ -7833,19 +7841,19 @@ if __name__ == '__main__':
 						print('\n********************************************************')
 						print('Do you want to print the information to a text file')
 						print('********************************************************')
-						i=0
-						while i==0:
-							print('Input "1" to print to text file')
-							print('Input "2" to NOT print to text file\n')
-							ck=input('Input your answer: ')
-							if ck ==str(1):
-								with open(infotext, 'w') as info:
-									info.write(feed)
-								i=1
-							elif ck ==str(2):
-								i=1
-							else:
-								print('WRONG CHOICE\n')	
+						# i=0
+						# while i==0:
+						# 	print(f"Input \"1\" to print to text file {__line__}")
+						# 	print('Input "2" to NOT print to text file\n')
+						# 	ck=input('Input your answer: ')
+						# 	if ck ==str(1):
+						# 		with open(infotext, 'w') as info:
+						# 			info.write(feed)
+						# 		i=1
+						# 	elif ck ==str(2):
+						# 		i=1
+						# 	else:
+						# 		print('WRONG CHOICE\n')	
 					elif args.text_file:
 						if vertype == "lv2":
 							f = Fs.Nsp(filename, 'rb')
@@ -7913,7 +7921,7 @@ if __name__ == '__main__':
 						while i==0:
 							print('Input "1" to VERIFY hash of files')
 							print('Input "2" to NOT verify hash  of files\n')
-							ck=input('Input your answer: ')
+							ck="1"
 							if ck ==str(1):
 								print('')
 								f = Fs.Xci(filename)
@@ -7927,22 +7935,22 @@ if __name__ == '__main__':
 								i=1
 							else:
 								print('WRONG CHOICE\n')
-						print('\n********************************************************')
-						print('Do you want to print the information to a text file')
-						print('********************************************************')
-						i=0
-						while i==0:
-							print('Input "1" to print to text file')
-							print('Input "2" to NOT print to text file\n')
-							ck=input('Input your answer: ')
-							if ck ==str(1):
-								with open(infotext, 'w') as info:
-									info.write(feed)
-								i=1
-							elif ck ==str(2):
-								i=1
-							else:
-								print('WRONG CHOICE\n')	
+						# print('\n********************************************************')
+						# print('Do you want to print the information to a text file')
+						# print('********************************************************')
+						# i=0
+						# while i==0:
+						# 	print(f"Input \"1\" to print to text file {__line__}")
+						# 	print('Input "2" to NOT print to text file\n')
+						# 	ck=input('Input your answer: ')
+						# 	if ck ==str(1):
+						# 		with open(infotext, 'w') as info:
+						# 			info.write(feed)
+						# 		i=1
+						# 	elif ck ==str(2):
+						# 		i=1
+						# 	else:
+						# 		print('WRONG CHOICE\n')	
 					elif args.text_file:
 						if vertype == "lv2":
 							f = Fs.Xci(filename)
@@ -8006,7 +8014,7 @@ if __name__ == '__main__':
 						while i==0:
 							print('Input "1" to VERIFY hash of files')
 							print('Input "2" to NOT verify hash  of files\n')
-							check=input('Input your answer: ')
+							check="1"
 							if check ==str(1):
 								print('')
 								f = Fs.Nca(filename, 'rb')
@@ -8018,22 +8026,22 @@ if __name__ == '__main__':
 								i=1
 							else:
 								print('WRONG CHOICE\n')
-						print('\n********************************************************')
-						print('Do you want to print the information to a text file')
-						print('********************************************************')
-						i=0
-						while i==0:
-							print('Input "1" to print to text file')
-							print('Input "2" to NOT print to text file\n')
-							check=input('Input your answer: ')
-							if check ==str(1):
-								with open(infotext, 'w') as info:
-									info.write(feed)
-								i=1
-							elif check ==str(2):
-								i=1
-							else:
-								print('WRONG CHOICE\n')
+						# print('\n********************************************************')
+						# print('Do you want to print the information to a text file')
+						# print('********************************************************')
+						# i=0
+						# while i==0:
+						# 	print(f"Input \"1\" to print to text file {__line__}")
+						# 	print('Input "2" to NOT print to text file\n')
+						# 	check=input('Input your answer: ')
+						# 	if check ==str(1):
+						# 		with open(infotext, 'w') as info:
+						# 			info.write(feed)
+						# 		i=1
+						# 	elif check ==str(2):
+						# 		i=1
+						# 	else:
+						# 		print('WRONG CHOICE\n')
 					if args.text_file:
 						f = Fs.Nca(filename, 'rb')
 						verdict,feed=f.verify_hash_nca(buffer,origheader,ver_,feed)
